@@ -20,12 +20,12 @@ import Card from './Card';
 //    </div>;
 // }
 
-
+import style from "./Cards.module.css";
 
 ///HACIENDO DESTRUCTORING
 export default function Cards({characters}) {
    // console.log(characters);
-   return <div>
+   return <div className={style.DivCards}>
       {characters.map(({id,name,status,species,gender,origin,image,onClose})=>(
       <Card key={id}
       name={name} 
@@ -38,8 +38,6 @@ export default function Cards({characters}) {
 
       {/* {for(let i=0;i<props.characters.length;i++){ }; */}
 
-     
-      
    </div>;
 }
 
