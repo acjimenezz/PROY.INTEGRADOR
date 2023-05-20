@@ -35,7 +35,8 @@ export default function Card(props) {
     console.log(props.origin);
    return (
       <div className={style.div}>
-         <button className={style.Button} onClick={()=>(props.onClose())}>X</button>
+         {/* <button className={style.Button} onClick={()=>(props.onClose())}>X</button> */}
+         <button className={style.Button} onClick={()=>props.onClose(props.id)}>X</button> 
          <h1 className={style.prop}>Name:{props.name}</h1>
          <h2 className={style.prop}>Status:{props.status}</h2>
          <h2 className={style.prop}>Species:{props.species}</h2>

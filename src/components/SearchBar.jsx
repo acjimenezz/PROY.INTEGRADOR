@@ -1,22 +1,34 @@
 import styled from 'styled-components';
+import { useState } from 'react';
 
 const Div=styled.span`
    height:50px;
+   margin-top: 10px;
+   margin-right: 10px;
 `;
 const Button=styled.button`
-   background-color: black;
-   color: wheat;
+   background-color: #f3f021;
+   color: #000000;
+   border-radius: 10px;
+   padding: 5px;
 `;
 const Input=styled.input`
    background-color: #9ef7f2;
+   padding:5px;
+   border-radius: 8px;
 `;
+
 
 export default function SearchBar({onSearch}) {
    // const onChange= (props) => {props.target.value}
+   const [id, setId] = useState("");
+  const handleChange = (event) => {
+       setId(event.target.value);
+  };
    return (
       <Div>
-         {<Input type='search' /*onChange={onChange}*/ /> }
-         <Button onClick={(param)=> onSearch(param.value)}>Agregar</Button>
+         {<Input type='search' onChange={handleChange} /> }
+         <Button onClick={()=> onSearch(id)}>Agregar</Button>
       </Div>
    );
 }

@@ -2,7 +2,7 @@
     position: relative;
     border-radius: 20px;
     margin: 10px;
-    background-color: aqua;
+    background-color: rgb(255, 255, 255);
     width: 200px;
     height: auto;
     font: normal 16px/normal "Times New Roman", Times, serif;
@@ -21,11 +21,13 @@ border: 1px solid #e00404;
 -webkit-border-radius: 3px;
 border-radius: 3px;
 font: normal 16px/normal "Times New Roman", Times, serif;
-color: rgba(0,0,0,0.9);
-background: #d80202;
+color: rgba(250, 250, 250, 0.9);
+background: #6202b1;
 border-radius: 50%;
 margin-top: 5px;
 margin-right: 5px;
+font: normal 12px/normal "Times New Roman", Times, serif;
+
 }
 
 .Button:hover{

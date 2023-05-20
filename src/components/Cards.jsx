@@ -23,18 +23,21 @@ import Card from './Card';
 import style from "./Cards.module.css";
 
 ///HACIENDO DESTRUCTORING
-export default function Cards({characters}) {
+export default function Cards({characters, onClose}) {
    // console.log(characters);
    return <div className={style.DivCards}>
-      {characters.map(({id,name,status,species,gender,origin,image,onClose})=>(
-      <Card key={id}
+      {characters.map(({id,name,status,species,gender,origin,image,/*onClose*/})=>(
+      <Card id={id}
       name={name} 
       status={status}
       species={species}
       gender={gender}
       origin={origin.name}
       image={image}
-      onClose={() => window.alert('Emulamos que se cierra la card')}/>))}
+      onClose={onClose}
+      // onClose={() => window.alert('Emulamos que se cierra la card')}  
+      
+      />))}
 
       {/* {for(let i=0;i<props.characters.length;i++){ }; */}
 
