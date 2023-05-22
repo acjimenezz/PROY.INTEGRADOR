@@ -2,13 +2,21 @@ import React from 'react'
 import ReactDOM from 'react-dom'
 import './index.css'
 import App from './App'
-// import background from './src/images/rick-y-morty.jpg'
+import {BrowserRouter} from 'react-router-dom'
 
-ReactDOM.render(
-  // <img src={background}/>,
-  <App />,
-  document.getElementById('root')
+const root= ReactDOM.createRoot(document.getElementById("root"));
+
+root.render(
+  <BrowserRouter>
+    <App />
+  </BrowserRouter>
+);
+
+// ReactDOM.render(
+ // <BrowserRouter>
+//   <App />
+//    </BrowserRouter>,
+//   document.getElementById('root')
   
-)
+// ) --> esta es otra forma de renderizar
 
-// style={{ backgroundImage: "http://localhost:3000/rick-y-morty.jpg" }}

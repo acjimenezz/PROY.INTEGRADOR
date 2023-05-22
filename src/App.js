@@ -1,6 +1,10 @@
 // import SearchBar from './components/SearchBar.jsx';
 // import characters, { Rick } from './data.js';
 // import Card from './components/Card.jsx';
+import {Routes} from 'react-router-dom';
+import { Route } from 'react-router-dom';
+import Detail from './views/Detail';
+import About from './views/About';
 
 import './App.css';
 import Cards from './components/Cards.jsx';
@@ -9,8 +13,6 @@ import Nav from './components/Nav';
 import { useState } from "react";
 import axios from "axios";
 const URL = "https://rickandmortyapi.com/api/character";
-
-
 
 function App() {
    const [characters, setCharacters] = useState([]);
@@ -39,22 +41,18 @@ function App() {
    return (
       
       <div className='App'>
-         {/* <SearchBar onSearch={(characterID) => window.alert(characterID)} /> */}
-         <Nav onSearch={onSearch}/>
-         <Cards characters={characters} onClose={onClose}/>
-         {/* <Card
-            id={Rick.id}
-            name={Rick.name}
-            status={Rick.status}
-            species={Rick.species}
-            gender={Rick.gender}
-            origin={Rick.origin.name}
-            image={Rick.image}
-            onClose={() => window.alert('Emulamos que se cierra la card')}
-         /> */}
-      </div>
-      // <div><img src={"./public/rick-y-morty.jpg"} /></div>
-      
+      {/* <SearchBar onSearch={(characterID) => window.alert(characterID)} /> */}
+      <Nav onSearch={onSearch}/>
+      <Routes>
+   
+         <Route path='/About' Component={About}/>
+         <Route path='/home' element={<Cards characters={characters} onClose={onClose}/>}/>
+         <Route path='/detail/:id' element={<Detail characters={characters}/>}/>
+
+     
+      </Routes>
+      </div>  
+            
    );
 }
 
