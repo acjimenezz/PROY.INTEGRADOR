@@ -11,6 +11,15 @@ const Button=styled.button`
    color: #000000;
    border-radius: 10px;
    padding: 5px;
+    font-family: Verdana;
+    font-weight: bold;
+    padding-left:15px;
+    padding-right:15px;
+
+   &:hover {
+    transform: scale(1.1);
+    cursor: pointer;
+  }
 `;
 const Input=styled.input`
    background-color: #9ef7f2;

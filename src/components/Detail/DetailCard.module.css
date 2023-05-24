@@ -19,6 +19,9 @@
     }
 
     .DivGrande{
-        display: flexbox;
+        display: block;
         flex-direction: row;
+        flex-basis: auto;
+        position: relative;
+
     }

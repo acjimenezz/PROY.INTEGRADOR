@@ -1,0 +1,59 @@
+.container{
+    background-color: blueviolet;
+    box-sizing: border-box;
+    width: fit-content;
+    padding: 20px;
+    display: flexbox;
+    position: sticky;
+    justify-content: center;
+    margin-top: 100px;
+    border-radius: 10px;
+}
+
+.image{
+    border-radius: 50%;
+    width: 150px;
+    height: 150px;
+}
+
+.button{
+    background-color: #f3f021;
+    color: #000000;
+    border-radius: 10px;
+    padding: 5px;
+     font-family: Verdana;
+     font-weight: bold;
+     padding-left:15px;
+     padding-right:15px;
+     margin-top: 5px;
+
+}
+
+.button:hover {
+    transform: scale(1.1);
+    cursor: pointer;
+  }
+
+.div{
+    display: flex;
+    flex-direction: column;
+}
+
+.font{
+    font-family: Verdana;
+    font-weight: bold;
+    padding: 4px;
+}
+
+.error{
+    border:3px solid red;
+    border-radius: 10px;
+    padding: 3px;
+}
+
+.success{
+    border: 3px solid green;
+    background-color: rgb(134, 224, 134);
+    border-radius: 10px;
+    padding: 3px;
+}

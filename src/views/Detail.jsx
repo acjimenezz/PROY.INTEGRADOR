@@ -3,7 +3,7 @@ import axios from 'axios';
 import { useState } from 'react';
 import { useEffect } from 'react';
 // import Card from '../components/Card';
-import DetailCard from '../components/DetailCard';
+import DetailCard from '../components/Detail/DetailCard';
 
 
 const Detail =()=>{
