@@ -45,3 +45,19 @@ font: normal 12px/normal "Times New Roman", Times, serif;
     width: 70%;
     border-radius: 20%;
 }
+
+.buttonContainer {
+    display: flex;
+    justify-content: flex-end;
+  }
+
+.buttonFav{
+    box-sizing: content-box;
+    background-color:  rgb(255, 255, 255);
+    border:0px;
+    padding: 0px;
+}
+.buttonFav:hover{
+    transform: scale(1.1);
+    cursor: pointer;
+}

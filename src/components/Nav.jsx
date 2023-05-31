@@ -10,6 +10,7 @@ function Nav ({onSearch}){
         <ContainerDiv >
             <Link to="/About"><Button>About</Button></Link>
             <Link to="/home"><Button>Home</Button></Link>
+            <Link to="/favoritos"><Button>Favoritos</Button></Link>
             <SearchBar onSearch={onSearch}/>
             <Link to="/"><Button2>Logout</Button2></Link>            
         </ContainerDiv>

@@ -7,15 +7,18 @@ import axios from "axios";
 import Detail from './views/Detail';
 import About from './views/About';
 import Form from './views/Form/Form';
+import { connect } from 'react-redux';
+import { removeFav } from './redux/actions';
 
 import './App.css';
 import Cards from './components/Cards/Cards.jsx';
 import Nav from './components/Nav';
+import Favorites from './components/Favorites';
 /////////////////////
 
 const URL = "https://rickandmortyapi.com/api/character";
 
-function App() {
+function App({myFavorites, removeFav}) {
   const [characters, setCharacters] = useState([]);
    // [], [c1], [c1, c2]
  
@@ -37,6 +40,7 @@ function App() {
   const onClose = (id) => {
       const filtered = characters.filter((chars) => chars.id !== id);
       setCharacters(filtered);
+      removeFav(id);
     };
 
     function NotFound() {
@@ -72,6 +76,7 @@ function App() {
         <Route path='/About' Component={About}/>
         <Route path='/home' element={<Cards characters={characters} onClose={onClose}/>}/>
         <Route path='/detail/:id' element={<Detail characters={characters}/>}/>
+        <Route path='/favoritos' Component={Favorites} />
         <Route path="/*" element={NotFound} />
 
     
@@ -80,5 +85,18 @@ function App() {
             
     );
 }
+const mapStateToProps = (state) => {
+  return {
+  myFavorites: state.myFavorites
+  }
+};
 
-export default App;
+const mapDispatchToProps=(dispatch)=>{
+  return {
+    removeFav : (id)=>dispatch(removeFav(id))
+  }
+};
+
+
+
+export default connect(mapStateToProps,mapDispatchToProps)(App);
