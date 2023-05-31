@@ -43,15 +43,15 @@ const Form =({login})=>{
             <div className={style.div}>
                 <label className={style.font} htmlFor="email">E-mail</label>
                 <input type="text" name="email"
-                value={userData.email}  onChange={handleChange}
-                className={errors.email ? style.error : style.success }/>
+                        value={userData.email}  onChange={handleChange}
+                        className={errors.email ? style.error : style.success }/>
                 <span>{errors.email}</span>
             </div>
             <div className={style.div}>
                 <label className={style.font} htmlFor="password">Password</label>
                 <input  type="text" name="password" 
-                value={userData.password} onChange={handleChange}
-                className={errors.password  ? style.error : style.success }/>
+                        value={userData.password} onChange={handleChange}
+                        className={errors.password  ? style.error : style.success }/>
                 <span>{errors.password}</span>
             </div>
             <button className={style.button} type="submit">Login</button>

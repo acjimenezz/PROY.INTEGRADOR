@@ -76,7 +76,7 @@ function App({myFavorites, removeFav}) {
         <Route path='/About' Component={About}/>
         <Route path='/home' element={<Cards characters={characters} onClose={onClose}/>}/>
         <Route path='/detail/:id' element={<Detail characters={characters}/>}/>
-        <Route path='/favoritos' Component={Favorites} />
+        <Route path='/favoritos' element={<Favorites onClose={onClose}/>} />
         <Route path="/*" element={NotFound} />
 
     
