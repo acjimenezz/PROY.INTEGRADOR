@@ -1,7 +1,8 @@
-import { ADD_FAV, REMOVE_FAV,REMOVE_FAV_BUTTON_X } from './actions';
+import { ADD_FAV, REMOVE_FAV,REMOVE_FAV_BUTTON_X, FILTER, ORDER} from './actions';
 
 const initialState = {
-    myFavorites:[]
+    myFavorites:[],
+    allCharacters:[]
 }
 
 // Nuestro reducer que maneja nuestros dos casos de acción incremento y decremento.
@@ -11,7 +12,9 @@ export default (state = initialState, action) => {
     switch (action.type) {
         case ADD_FAV:
         // completa para este caso
-            return { ...state, myFavorites:[...state.myFavorites, action.payload]};
+            return { ...state, 
+                myFavorites:[...state.allCharacters, action.payload],
+                allCharacters:[...state.allCharacters, action.payload]};
 
         case REMOVE_FAV:
         // Fill para este otro
@@ -19,6 +22,17 @@ export default (state = initialState, action) => {
 
         case REMOVE_FAV_BUTTON_X:
             return { ...state, myFavorites: state.myFavorites.filter((char)=> parseInt(char.id) !== parseInt(action.payload))};
+        
+        case FILTER:
+            const allCharacterFavFiltered=state.allCharacters.filter((char)=> char.gender === action.payload)
+            return action.payload === 'All' ? 
+                {...state, myFavorites:state.allCharacters} : {...state, myFavorites:allCharacterFavFiltered}
+        
+        case ORDER:
+            return {...state,
+                myFavorites: action.payload === 'Ascendente' ? 
+                state.allCharacters.sort((a, b) => a.id - b.id): 
+                state.allCharacters.sort((a, b) => b.id - a.id)}
 
         default:
             return state;

@@ -23,7 +23,7 @@ const ContainerDiv=styled.div`
     display: flex;
     justify-content: space-around;
     align-items: center;
-    width: 1300px;
+    width: 100%;
 `;
 
 const Button=styled.button`

@@ -13,7 +13,7 @@ import { removeFav } from './redux/actions';
 import './App.css';
 import Cards from './components/Cards/Cards.jsx';
 import Nav from './components/Nav';
-import Favorites from './components/Favorites';
+import Favorites from './components/Favorites/Favorites';
 /////////////////////
 
 const URL = "https://rickandmortyapi.com/api/character";
